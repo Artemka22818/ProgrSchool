@@ -1,0 +1,449 @@
+/* ========== Глобальные сбросы и базовые стили ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: #f9fafc;
+    color: #1e293b;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ========== Шапка (header) ========== */
+.header {
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 20, 50, 0.05);
+    padding: 0.8rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #e9eef2;
+}
+
+.header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #334155;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    border-radius: 40px;
+    transition: all 0.15s;
+    font-size: 1rem;
+}
+
+.nav a:hover {
+    background: #eef2f6;
+    color: #1e293b;
+}
+
+.nav a.active {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-profile {
+    background: #f1f4f9;
+    border-radius: 40px;
+    padding: 0.4rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 500;
+    border: 1px solid #d0d9e4;
+}
+
+/* ========== Основной контейнер ========== */
+.main {
+    flex: 1;
+    max-width: 1300px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* ========== Футер ========== */
+.footer {
+    background: white;
+    border-top: 1px solid #e2e8f0;
+    padding: 2rem;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* ========== Заголовки страниц ========== */
+.page-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: linear-gradient(145deg, #0f172a, #334155);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========== Карточки (общие) ========== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.8rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 28px;
+    padding: 1.8rem 1.5rem;
+    box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eef2f6;
+    transition: all 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 30px -12px rgba(37, 99, 235, 0.15);
+    border-color: #b9d0f0;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    margin-bottom: 0.6rem;
+    padding-left: 1.2rem;
+    position: relative;
+    color: #2d3c53;
+}
+
+.card li::before {
+    content: "▹";
+    color: #2563eb;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.sub-list {
+    margin-left: 1.2rem;
+    margin-top: 0.3rem;
+    font-size: 0.95rem;
+    color: #4a5a72;
+}
+
+.badge {
+    background: #dbeafe;
+    color: #1e4a8b;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.7rem;
+    border-radius: 30px;
+    margin-left: 0.5rem;
+}
+
+/* ========== Стили для страницы "О школе" ========== */
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.about-card {
+    background: white;
+    border-radius: 28px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eef2f6;
+}
+
+.about-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.teacher-list {
+    list-style: none;
+}
+
+.teacher-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.teacher-list img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #cbd5e1;
+}
+
+.review {
+    background: #f1f5f9;
+    padding: 1.2rem;
+    border-radius: 18px;
+    margin-bottom: 1rem;
+}
+
+.review p {
+    font-style: italic;
+}
+
+.review span {
+    font-weight: 600;
+    color: #2563eb;
+}
+
+/* ========== Стили для страницы "Контакты" ========== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    background: white;
+    border-radius: 28px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.06);
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    font-size: 2rem;
+}
+
+.feedback-form {
+    background: white;
+    border-radius: 28px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 16px;
+    border: 1px solid #cbd5e1;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.btn-submit {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.btn-submit:hover {
+    background: #1e4fbe;
+}
+
+.online-chat {
+    margin-top: 2rem;
+    background: #dbeafe;
+    border-radius: 40px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* ========== Стили для страницы "Личный кабинет" ========== */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: white;
+    border-radius: 40px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: #94a3b8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+}
+
+.profile-info h2 {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+.stat {
+    background: #eef2f6;
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.8rem;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 28px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 18px -6px rgba(0, 0, 0, 0.04);
+    border: 1px solid #eef2f6;
+}
+
+.profile-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.profile-card ul {
+    list-style: none;
+}
+
+.profile-card li {
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    margin: 0.5rem 0;
+}
+
+.progress-fill {
+    height: 8px;
+    background: #2563eb;
+    border-radius: 20px;
+    width: 65%; /* значение переопределяется инлайн-стилем */
+}
+
+/* ========== Дополнительные стили для главной страницы ========== */
+.features {
+    margin-top: 3rem;
+    background: #e6f0ff;
+    border-radius: 40px;
+    padding: 2rem;
+}
+
+.features h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.feature-list {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .header { padding: 0.8rem 1rem; }
+    .main { padding: 0 1rem; }
+    .page-title { font-size: 1.8rem; }
+    .about-section, .contact-grid { grid-template-columns: 1fr; }
+    .profile-header { flex-direction: column; text-align: center; }
+}
